@@ -22,12 +22,10 @@ const routes: Routes = [
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
     }]
   },
-<<<<<<< HEAD
 {
   path: 'pie',
   component: MyPieComponent
-}
-=======
+},
   {
     path: 'main',
     component: MainComponent,
@@ -41,7 +39,6 @@ const routes: Routes = [
   //     loadChildren: './layouts/main-layout/main-layout.module#MainLayoutModule'
   //   }]
   // },
->>>>>>> b0c696a4c12ed91044b419e39a86572fb3995158
 ];
 
 @NgModule({

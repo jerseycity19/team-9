@@ -1,0 +1,61 @@
+
+
+button > .btn, .btn-primary{
+    // display: block;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    //position: absolute;
+    position: top;
+    margin-left: 28%;
+    margin-right: 28%;
+}
+
+.left_pic{
+   // display: float;
+    display: flexbox;
+    height: 280px;
+    margin-left: 2%;
+    width: 200px;
+    position: fixed;
+}
+// .right_pic{
+//     display: floatbox;
+//     // float: right;
+//     height: 280px;
+//     margin-right: 2%;
+//     width: 200px;
+//     position: fixed;
+// }
+
+h2 {
+    text-align: center;
+    margin-right: 30%;
+    margin-top: 0%;
+}
+
+p{
+    text-align: center;
+    margin-right: 30%;
+}
+
+hr{
+    color: red;
+}
+
+.freedomImage{
+    display: flexbox;
+    width: 500px;
+    height: 400px;
+    justify-content: left;
+}
+
+.about{
+    justify-content: center;
+    align-items: center;
+    margin-left: 22%;
+}

@@ -23,14 +23,9 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 //   AgmCoreModule
 // } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-<<<<<<< HEAD
 import { ChartsComponent } from './charts/charts.component';
 import { MyPieComponent } from './my-pie/my-pie.component';
-
-
-=======
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
-
 const firebaseConfig = {
   apiKey: "AIzaSyBURqCqrg381QkI10LlmDw18_4NuAYo71w",
   authDomain: "codeforgood9.firebaseapp.com",
@@ -46,11 +41,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MainComponent } from './main/main.component';
+import { LandLoginComponent } from './land-login/land-login.component';
 import { FormComponent } from './form/form.component';
-
 import { MatButtonModule, MatStepperModule, MatFormFieldModule, MatSelectModule } from '@angular/material';
 import { TestComponent } from './test/test.component';
->>>>>>> b0c696a4c12ed91044b419e39a86572fb3995158
 
 @NgModule({
   imports: [
@@ -74,16 +68,13 @@ import { TestComponent } from './test/test.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-<<<<<<< HEAD
     ChartsComponent,
-    MyPieComponent
-
-=======
+    MyPieComponent,
     MainLayoutComponent,
     MainComponent,
+    LandLoginComponent,
     FormComponent,
     TestComponent
->>>>>>> b0c696a4c12ed91044b419e39a86572fb3995158
   ],
   providers: [],
   bootstrap: [AppComponent]
