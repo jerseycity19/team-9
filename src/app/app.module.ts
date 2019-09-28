@@ -38,6 +38,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   imports: [
@@ -59,7 +60,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    MainComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
