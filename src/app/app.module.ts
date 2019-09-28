@@ -39,6 +39,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MainComponent } from './main/main.component';
+import { FormComponent } from './form/form.component';
+
+import { MatButtonModule, MatStepperModule, MatFormFieldModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -51,6 +54,7 @@ import { MainComponent } from './main/main.component';
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule, // storage
+    MatButtonModule, MatStepperModule, MatFormFieldModule,
     RouterModule,
     AppRoutingModule,
     // AgmCoreModule.forRoot({
@@ -61,7 +65,8 @@ import { MainComponent } from './main/main.component';
     AppComponent,
     AdminLayoutComponent,
     MainLayoutComponent,
-    MainComponent
+    MainComponent,
+    FormComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
