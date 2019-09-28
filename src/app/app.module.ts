@@ -69,12 +69,9 @@ import { TestComponent } from './test/test.component';
     AdminLayoutComponent,
     MainLayoutComponent,
     MainComponent,
-<<<<<<< HEAD
-    LandLoginComponent
-=======
+    LandLoginComponent,
     FormComponent,
     TestComponent
->>>>>>> b0c696a4c12ed91044b419e39a86572fb3995158
   ],
   providers: [],
   bootstrap: [AppComponent]
