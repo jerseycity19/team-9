@@ -1,5 +1,5 @@
 export interface Submission {
-    date: string;
+    date: number;
     idType: string;
     age: string;
     gender: string;

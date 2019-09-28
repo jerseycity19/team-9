@@ -8,6 +8,11 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { MainComponent } from './main/main.component';
 import { FormComponent } from './form/form.component';
 
+import { AuthGuard } from './services/auth.guard';
+import { AuthService } from './services/auth.service';
+import { LoginComponent } from './login/login.component';
+
+
 const routes: Routes = [
   {
     path: '',
@@ -16,6 +21,7 @@ const routes: Routes = [
   }, {
     path: '',
     component: AdminLayoutComponent,
+    canActivateChild: [AuthGuard],
     children: [{
       path: '',
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
@@ -29,6 +35,11 @@ const routes: Routes = [
   {
     path: 'form',
     component: FormComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
     pathMatch: 'full'
   }
   // {
@@ -51,5 +62,6 @@ const routes: Routes = [
   ],
   exports: [
   ],
+  providers: [AuthGuard, AuthService]
 })
 export class AppRoutingModule { }

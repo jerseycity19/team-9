@@ -496,9 +496,9 @@ export class FormComponent implements OnInit {
       notes: ['', Validators.required]
     })
 
-    this.firstFormGroup.valueChanges.subscribe(console.log);
-    this.secondFormGroup.valueChanges.subscribe(console.log);
-    this.fourthFormGroup.valueChanges.subscribe(console.log);
+    // this.firstFormGroup.valueChanges.subscribe(console.log);
+    // this.secondFormGroup.valueChanges.subscribe(console.log);
+    // this.fourthFormGroup.valueChanges.subscribe(console.log);
   }
 
   submitData() {
@@ -506,7 +506,7 @@ export class FormComponent implements OnInit {
     const employment = this.secondFormGroup.value;
     const specifics = this.fourthFormGroup.value;
     const notesVal = this.notesFormGroup.value.notes;
-    console.log(about, employment, specifics, notesVal);
+    // console.log(about, employment, specifics, notesVal);
     const subs: AngularFirestoreCollection = this.afs.collection<any>('subs');
     subs.add({
       date: Date.now(),
