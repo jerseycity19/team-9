@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Submission } from './submission.model';
 
 
 @Component({
@@ -9,9 +11,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
-  isLinear = true;
+  isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  fourthFormGroup: FormGroup;
+  notesFormGroup: FormGroup;
+
 
   ids = ['scholar', 'student', 'administrator', 'non-university'];
   ages = ['20-29', '30-39', '40-49', '50-59', '60-69', '70+'];
@@ -458,8 +463,9 @@ export class FormComponent implements OnInit {
   studies = ['natural sciences', 'social sciences', 'arts and humanities', 'engineering', 'computer science', 'medicine', 'bussiness/finance', 'law/human rights', 'other'];
   sensitivity_levels = ['not very sensitive', 'somewhat sensitive', 'more sensitive then most', 'extremely sensitive']
 
+  doc: AngularFirestoreDocument<Submission>;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private afs: AngularFirestore) { }
 
   ngOnInit() {
     this.firstFormGroup = this.fb.group({
@@ -477,10 +483,50 @@ export class FormComponent implements OnInit {
       sensitivity_level: ['', Validators.required]
     })
 
-    this.firstFormGroup.valueChanges.subscribe(console.log);
-    this.secondFormGroup.valueChanges.subscribe(console.log);
+    this.fourthFormGroup = this.fb.group({
+      f_self: ['', Validators.required],
+      num_others: ['', Validators],
+      f_others: ['', Validators],
+      source: ['', Validators.required],
+      retaliation_self: ['', Validators.required],
+      retaliation_others: ['', Validators.required],
+      y_y_censor: ['', Validators.required]
+    })
+    this.notesFormGroup = this.fb.group({
+      notes: ['', Validators.required]
+    })
 
+    // this.firstFormGroup.valueChanges.subscribe(console.log);
+    // this.secondFormGroup.valueChanges.subscribe(console.log);
+    // this.fourthFormGroup.valueChanges.subscribe(console.log);
   }
 
+  submitData() {
+    const about = this.firstFormGroup.value;
+    const employment = this.secondFormGroup.value;
+    const specifics = this.fourthFormGroup.value;
+    const notesVal = this.notesFormGroup.value.notes;
+    // console.log(about, employment, specifics, notesVal);
+    const subs: AngularFirestoreCollection = this.afs.collection<any>('subs');
+    subs.add({
+      date: Date.now(),
+      idType: about.identification,
+      age: about.age_range,
+      gender: about.gender,
+      country: about.country,
+      primaryLanguage: about.lang,
+      employmentStatus: employment.employment,
+      disipline: employment.area_of_study,
+      sensitivity: employment.sensitivity_level,
+      notes: notesVal,
+      frequencySelf: specifics.f_self,
+      frequencyOthers: specifics.f_others,
+      numOthers: specifics.num_others,
+      source: specifics.source,
+      retaliationSelf: specifics.retaliation_self,
+      retaliationOthers: specifics.retaliation_others,
+      yearToYearCensor: specifics.y_y_censor
+    })
+  }
 }
 

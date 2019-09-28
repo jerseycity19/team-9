@@ -15,7 +15,8 @@ img{
     margin-right: 28%;
 }
 
-.left_pic{
+
+/*.left_pic{
    // display: float;
     display: flexbox;
     height: 280px;
@@ -23,6 +24,7 @@ img{
     width: 200px;
     position: fixed;
 }
+*/
 // .right_pic{
 //     display: floatbox;
 //     // float: right;
@@ -47,11 +49,120 @@ hr{
     color: red;
 }
 
-.freedomImage{
+/*.freedomImage{
     display: flexbox;
     width: 500px;
     height: 400px;
     justify-content: left;
+}
+*/
+
+.animate-site-container {
+    animation-delay: .7s;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+  }
+
+  /* fadeIn
+------------------------------------------- */
+
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+  }
+
+  /* fadeInUp
+------------------------------------------- */
+
+  @-webkit-keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(70px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+  }
+
+  /* fadeInDown
+------------------------------------------- */
+
+  @-webkit-keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+  }
+
+#picture {
+  height: 100%;
+  align: center;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  filter: grayscale(100%) brightness(45%);
+  margin-top: 0px;
 }
 
 .about{

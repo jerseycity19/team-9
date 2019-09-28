@@ -96,7 +96,7 @@ country_list  = ['USA', 'Iran', 'South Korea', 'Canda', 'Morocco', 'Turkey', 'Sy
 
 
 outputters = []
-for i in range(0, 100):
+for i in range(0, 1000):
     output = {}
     output['age'] = random.randint(15, 90)
     output['country'] = random.choice(country_list)
