@@ -39,6 +39,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MainComponent } from './main/main.component';
+
+import { LandLoginComponent } from './land-login/land-login.component';
 import { FormComponent } from './form/form.component';
 
 import { MatButtonModule, MatStepperModule, MatFormFieldModule, MatSelectModule, MatInputModule } from '@angular/material';
@@ -69,6 +71,7 @@ import { LoginComponent } from './login/login.component';
     AdminLayoutComponent,
     MainLayoutComponent,
     MainComponent,
+    LandLoginComponent,
     FormComponent,
     TestComponent,
     LoginComponent
