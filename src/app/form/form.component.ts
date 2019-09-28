@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Submission } from './submission.model';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -465,7 +466,7 @@ export class FormComponent implements OnInit {
 
   doc: AngularFirestoreDocument<Submission>;
 
-  constructor(private fb: FormBuilder, private afs: AngularFirestore) { }
+  constructor(private fb: FormBuilder, private afs: AngularFirestore, private router: Router) { }
 
   ngOnInit() {
     this.firstFormGroup = this.fb.group({
@@ -527,6 +528,7 @@ export class FormComponent implements OnInit {
       retaliationOthers: specifics.retaliation_others,
       yearToYearCensor: specifics.y_y_censor
     })
+    this.router.navigate(['/main'])
   }
 }
 
