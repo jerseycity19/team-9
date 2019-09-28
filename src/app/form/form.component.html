@@ -1,0 +1,146 @@
+<p>
+  form works!
+</p>
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+  <mat-step>
+    <ng-template matStepLabel>Terms and Conditions</ng-template>
+    <p>
+      terms......
+    </p>
+    <div>
+      <button mat-button matStepperNext>I understand and agree</button>
+    </div>
+
+  </mat-step>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out your name</ng-template>
+      <!-- <mat-form-field>
+        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div> -->
+      <mat-label>Role</mat-label>
+      <mat-select formControlName="identification">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let id of ids" [value]="id">{{id}}</mat-option>
+      </mat-select>
+
+      <mat-label>Age</mat-label>
+      <mat-select formControlName="age_range">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let age of ages" [value]="age">{{age}}</mat-option>
+      </mat-select>
+
+      <mat-label>Gender</mat-label>
+      <mat-select formControlName="gender">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let gender of genders" [value]="gender">{{gender}}</mat-option>
+      </mat-select>
+
+      <mat-label>Country</mat-label>
+      <mat-select formControlName="country">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
+      </mat-select>
+
+      <mat-label>Language</mat-label>
+      <mat-select formControlName="lang">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let l of languages" [value]="l.code">{{l.nativeName}}</mat-option>
+      </mat-select>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="secondFormGroup">
+
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Employement Information</ng-template>
+
+      <mat-label>Employment</mat-label>
+      <mat-select formControlName="employment">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let e of employment_stats" [value]="e">{{e}}</mat-option>
+      </mat-select>
+
+      <mat-label>Disipline</mat-label>
+      <mat-select formControlName="area_of_study">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let study of studies" [value]="study">{{study}}</mat-option>
+      </mat-select>
+
+      <mat-label>Sensitivity</mat-label>
+      <mat-select formControlName="sensitivity_level">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let sense of sensitivity_levels" [value]="sense">{{sense}}</mat-option>
+      </mat-select>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel> Self-Sensorship</ng-template>
+
+      <p>
+        "Self-sensorship in higher education is defined as refraining from examining specific research questions,
+        teaching specific topics, of sharing specific theorites, evidence or ideas, through publication or private
+        expressiong (collectively, "professional expresstion"), becasue of the fear of professional (e.g. losing job or
+        promotion), legal (e.g. prosecution or fine), or violent retaliation (e.g. harassment, assault), whether from
+        state or non-state sources, against yourself or others (e.g. family members)."
+      </p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <form [formGroup]="fourthFormGroup">
+      <p>
+        Since the start of the last academic year, how often have you self-censored your professional expression
+        (research, teaching/studies, publication, public expression) becasue of fear of professional, legal or violent
+        retaliation?
+      </p>
+
+      <p>
+        Since the start of the last academic year, how many professional colleagues or students are you aware of who
+        have self-censored their professional expression (research, teaching/studies, publication, public expression)
+        becasue of fear of professional, legal or violent retaliation?
+      </p>
+
+      <p>
+        Since the start of the last academic year, how often have you advised any professional colleagues or students to
+        self-censored their professional expression (research, teaching/studies, publication, public expression) becasue
+        of fear
+        of professional, legal or violent retaliation?
+      </p>
+
+      <p>
+        What is the primart source of consequences that you or any professional colleagues or students might fear that
+        would cause you to self-censor your professional expression (research, teaching/studies, publication, public
+        expression)?
+      </p>
+
+      <p>
+        Since the start of the last academic year, how often have you experienced any professional, legal or violent
+        retaliation for your professional expression (research)
+      </p>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="submitData()">Submit</button>
+    </div>
+  </mat-step>
+</mat-vertical-stepper>
