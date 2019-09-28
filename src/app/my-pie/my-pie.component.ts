@@ -22,8 +22,8 @@ export class MyPieComponent implements OnInit {
   appId: "app-id",
   measurementId: "G-measurement-id",
   };
-  public pieChartLabels: Label[] = ['Turkey', 'Syria', 'Afghanistan'];
-  public pieChartData: SingleDataSet = [300, 500, 100];
+  public pieChartLabels: Label[] = ['Turkey', 'Syria', 'Afghanistan', 'Morocco'];
+  public pieChartData: SingleDataSet = [300, 500, 100, 75];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
   public pieChartPlugins = [];

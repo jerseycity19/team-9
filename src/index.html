@@ -60,7 +60,7 @@
   // Initialize Firebase
   var project = firebase.initializeApp(firebaseConfig);
   console.log(project)
-  var database = project.database()
+  var database = firebase.database()
   var ref = database.ref('subs')
   console.log(ref)
   ref.on()

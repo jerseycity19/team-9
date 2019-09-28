@@ -6,6 +6,8 @@ import { ChartsComponent } from './charts/charts.component'
 import { MyPieComponent } from './my-pie/my-pie.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
   {
@@ -20,10 +22,26 @@ const routes: Routes = [
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
     }]
   },
+<<<<<<< HEAD
 {
   path: 'pie',
   component: MyPieComponent
 }
+=======
+  {
+    path: 'main',
+    component: MainComponent,
+    pathMatch: 'full'
+  },
+  // {
+  //   path: 'main',
+  //   component: MainLayoutComponent,
+  //   children: [{
+  //     path: '',
+  //     loadChildren: './layouts/main-layout/main-layout.module#MainLayoutModule'
+  //   }]
+  // },
+>>>>>>> b0c696a4c12ed91044b419e39a86572fb3995158
 ];
 
 @NgModule({
