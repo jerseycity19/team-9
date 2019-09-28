@@ -8,6 +8,46 @@
             <div class="card-body">
                 <div id="typography">
                     <div class="row">
+                        <div class="col-md-2">
+                            <form action="">
+                                <mat-label>Begin Date</mat-label>
+                                <mat-form-field>
+                                    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                            </form>
+                        </div>
+                        <div class="col-md-2">
+                            <form action="">
+                                <mat-label>End Date</mat-label>
+                                <mat-form-field>
+                                    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                            </form>
+                        </div>
+                        <div class="col-md-2">
+                            <form [formGroup]="inputForm">
+                                <mat-form-field>
+                                    <input matInput placeholder="Region">
+                                </mat-form-field>
+                            </form>
+                        </div>
+                        <div class="col-md-2">
+                            <mat-form-field>
+                                <input matInput placeholder="Discipline">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-2">
+                            <mat-form-field>
+                                <input matInput placeholder="Language">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-2">
+                            <button mat-button class="btn btn-primary" (click)="getQuery()">Submit</button>
+                        </div>
 
                     </div>
                 </div>

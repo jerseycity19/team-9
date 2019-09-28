@@ -43,7 +43,7 @@ import { MainComponent } from './main/main.component';
 import { LandLoginComponent } from './land-login/land-login.component';
 import { FormComponent } from './form/form.component';
 
-import { MatButtonModule, MatStepperModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatDatepickerModule } from '@angular/material';
+import { MatButtonModule, MatStepperModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 
 import { TestComponent } from './test/test.component';
 import { LoginComponent } from './login/login.component';
@@ -59,7 +59,7 @@ import { LoginComponent } from './login/login.component';
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule, // storage
-    MatButtonModule, MatStepperModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatDatepickerModule,
+    MatButtonModule, MatStepperModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatDatepickerModule, MatNativeDateModule,
     RouterModule,
     AppRoutingModule,
     // AgmCoreModule.forRoot({
