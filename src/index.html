@@ -58,8 +58,14 @@
     appId: "1:483495702605:web:760d31e75bf1e5597cec04"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  console.log('successful db access')
+  var project = firebase.initializeApp(firebaseConfig);
+  console.log(project)
+  var database = project.database()
+  var ref = database.ref('subs')
+  console.log(ref)
+  ref.on()
+
+
 </script>
   <app-root>
     <div class="loader">
