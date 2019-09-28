@@ -8,13 +8,13 @@
       terms......
     </p>
     <div>
-      <button mat-button matStepperNext>I understand and agree</button>
+      <button mat-rasied-button class="btn btn-danger pull-right" matStepperNext>I understand and agree</button>
     </div>
 
   </mat-step>
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill out your name</ng-template>
+      <ng-template matStepLabel>About</ng-template>
       <!-- <mat-form-field>
         <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
       </mat-form-field>
@@ -86,35 +86,51 @@
     </form>
   </mat-step>
   <mat-step>
-    <form [formGroup]="thirdFormGroup">
-      <ng-template matStepLabel> Self-Sensorship</ng-template>
+    <!-- <form [formGroup]="thirdFormGroup"> -->
+    <ng-template matStepLabel>Self-Censorship</ng-template>
 
-      <p>
-        "Self-sensorship in higher education is defined as refraining from examining specific research questions,
-        teaching specific topics, of sharing specific theorites, evidence or ideas, through publication or private
-        expressiong (collectively, "professional expresstion"), becasue of the fear of professional (e.g. losing job or
-        promotion), legal (e.g. prosecution or fine), or violent retaliation (e.g. harassment, assault), whether from
-        state or non-state sources, against yourself or others (e.g. family members)."
-      </p>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
+    <p>
+      "Self-sensorship in higher education is defined as refraining from examining specific research questions,
+      teaching specific topics, of sharing specific theorites, evidence or ideas, through publication or private
+      expressiong (collectively, "professional expresstion"), becasue of the fear of professional (e.g. losing job or
+      promotion), legal (e.g. prosecution or fine), or violent retaliation (e.g. harassment, assault), whether from
+      state or non-state sources, against yourself or others (e.g. family members)."
+    </p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+    <!-- </form> -->
   </mat-step>
   <mat-step>
     <form [formGroup]="fourthFormGroup">
+      <ng-template matStepLabel>Specifics</ng-template>
       <p>
         Since the start of the last academic year, how often have you self-censored your professional expression
         (research, teaching/studies, publication, public expression) becasue of fear of professional, legal or violent
         retaliation?
       </p>
+      <mat-label>Choose one</mat-label>
+      <mat-select formControlName="f_self">
+        <mat-option>None</mat-option>
+        <mat-option>Never</mat-option>
+        <mat-option>Sometimes</mat-option>
+        <mat-option>Frequently</mat-option>
+        <mat-option>All the time</mat-option>
+      </mat-select>
 
       <p>
         Since the start of the last academic year, how many professional colleagues or students are you aware of who
         have self-censored their professional expression (research, teaching/studies, publication, public expression)
         becasue of fear of professional, legal or violent retaliation?
       </p>
+      <mat-label>Choose one</mat-label>
+      <mat-select formControlName="num_others">
+        <mat-option>None</mat-option>
+        <mat-option>A few</mat-option>
+        <mat-option>A majority</mat-option>
+        <mat-option>Almost all</mat-option>
+      </mat-select>
 
       <p>
         Since the start of the last academic year, how often have you advised any professional colleagues or students to
@@ -122,23 +138,76 @@
         of fear
         of professional, legal or violent retaliation?
       </p>
+      <mat-label>Choose one</mat-label>
+      <mat-select formControlName="f_others">
+        <mat-option>None</mat-option>
+        <mat-option>Never</mat-option>
+        <mat-option>Sometimes</mat-option>
+        <mat-option>Frequently</mat-option>
+        <mat-option>All the time</mat-option>
+      </mat-select>
 
       <p>
-        What is the primart source of consequences that you or any professional colleagues or students might fear that
+        What is the primary source of consequences that you or any professional colleagues or students might fear that
         would cause you to self-censor your professional expression (research, teaching/studies, publication, public
         expression)?
       </p>
+      <mat-label>Choose one</mat-label>
+      <mat-select formControlName="source">
+        <mat-option>Colleagues/Professional Peers</mat-option>
+        <mat-option>University/Employer</mat-option>
+        <mat-option>Home Country Government</mat-option>
+        <mat-option>Foreign Country Government</mat-option>
+        <mat-option>Society/public</mat-option>
+        <mat-option>Not sure</mat-option>
+        <mat-option>No fear of consequences</mat-option>
+      </mat-select>
 
       <p>
         Since the start of the last academic year, how often have you experienced any professional, legal or violent
-        retaliation for your professional expression (research)
+        retaliation for your professional expression (research, teaching/studies, publication, public expression)?
       </p>
+      <mat-label>Choose one</mat-label>
+      <mat-select formControlName="retaliation_self">
+        <mat-option>Yes</mat-option>
+        <mat-option>No</mat-option>
+        <mat-option>Not sure</mat-option>
+      </mat-select>
+
+      <p>
+        Since the start of the last academic year, are you aware of any professiona; colleagues or students who have
+        experienced any professional, legal or violent retaliation for their professional expression (research,
+        teaching/studies, publication, public expression).
+      </p>
+      <mat-label>Choose one</mat-label>
+      <mat-select formControlName="retaliation_others">
+        <mat-option>Yes</mat-option>
+        <mat-option>No</mat-option>
+        <mat-option>Not sure</mat-option>
+      </mat-select>
+
+      <p>
+        Compared to before the start of the last academic year, are tou more or less likely today to self-censor your
+        professional expression (research, teaching/studies, publication, public expression) becasue of fear of
+        professional, legal of violent retaliation?
+      </p>
+      <mat-label>Choose one</mat-label>
+      <mat-select formControlName="y_y_censor">
+        <mat-option>More likely</mat-option>
+        <mat-option>Less likely</mat-option>
+        <mat-option>About the same</mat-option>
+      </mat-select>
+
+
     </form>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    You are now done.
+    <ng-template matStepLabel>Submit Anonymously</ng-template>
+
     <div>
+      <p>
+        Click Submit below to submit information ANONYMOUSLY.
+      </p>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button (click)="submitData()">Submit</button>
     </div>

@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { MainComponent } from './main/main.component';
+import { FormComponent } from './form/form.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,11 @@ const routes: Routes = [
     component: MainComponent,
     pathMatch: 'full'
   },
+  {
+    path: 'form',
+    component: FormComponent,
+    pathMatch: 'full'
+  }
   // {
   //   path: 'main',
   //   component: MainLayoutComponent,
