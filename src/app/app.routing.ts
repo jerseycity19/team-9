@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
+import { ChartsComponent } from './charts/charts.component'
+import { MyPieComponent } from './my-pie/my-pie.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
@@ -17,7 +19,11 @@ const routes: Routes = [
       path: '',
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
     }]
-  }
+  },
+{
+  path: 'pie',
+  component: MyPieComponent
+}
 ];
 
 @NgModule({

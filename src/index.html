@@ -35,10 +35,32 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet'
     type='text/css'>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR-KEY-HERE"></script>
+  <script src="node_modules/chart.js/src/chart.js"> </script>
 
 </head>
 
 <body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBURqCqrg381QkI10LlmDw18_4NuAYo71w",
+    authDomain: "codeforgood9.firebaseapp.com",
+    databaseURL: "https://codeforgood9.firebaseio.com",
+    projectId: "codeforgood9",
+    storageBucket: "codeforgood9.appspot.com",
+    messagingSenderId: "483495702605",
+    appId: "1:483495702605:web:760d31e75bf1e5597cec04"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  console.log('successful db access')
+</script>
   <app-root>
     <div class="loader">
       <svg class="circular" viewBox="25 25 50 50">

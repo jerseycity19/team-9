@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { ChartsModule } from 'ng2-charts';
 
 
 import { AppRoutingModule } from './app.routing';
@@ -22,6 +23,10 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 //   AgmCoreModule
 // } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { ChartsComponent } from './charts/charts.component';
+import { MyPieComponent } from './my-pie/my-pie.component';
+
+
 
 @NgModule({
   imports: [
@@ -32,6 +37,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    ChartsModule,
     // AgmCoreModule.forRoot({
     //   apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     // })
@@ -39,6 +45,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    ChartsComponent,
+    MyPieComponent
 
   ],
   providers: [],
