@@ -39,14 +39,12 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MainComponent } from './main/main.component';
-<<<<<<< HEAD
+
 import { LandLoginComponent } from './land-login/land-login.component';
-=======
 import { FormComponent } from './form/form.component';
 
 import { MatButtonModule, MatStepperModule, MatFormFieldModule, MatSelectModule } from '@angular/material';
 import { TestComponent } from './test/test.component';
->>>>>>> b0c696a4c12ed91044b419e39a86572fb3995158
 
 @NgModule({
   imports: [
