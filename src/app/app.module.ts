@@ -22,6 +22,27 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 //   AgmCoreModule
 // } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBURqCqrg381QkI10LlmDw18_4NuAYo71w",
+  authDomain: "codeforgood9.firebaseapp.com",
+  databaseURL: "https://codeforgood9.firebaseio.com",
+  projectId: "codeforgood9",
+  storageBucket: "",
+  messagingSenderId: "483495702605",
+  appId: "1:483495702605:web:406deed27356e3277cec04"
+};
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { MainComponent } from './main/main.component';
+import { FormComponent } from './form/form.component';
+
+import { MatButtonModule, MatStepperModule, MatFormFieldModule, MatSelectModule } from '@angular/material';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   imports: [
@@ -30,6 +51,11 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     ReactiveFormsModule,
     HttpModule,
     ComponentsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule, // firestore
+    AngularFireAuthModule, // auth
+    AngularFireStorageModule, // storage
+    MatButtonModule, MatStepperModule, MatFormFieldModule, MatSelectModule,
     RouterModule,
     AppRoutingModule,
     // AgmCoreModule.forRoot({
@@ -39,7 +65,10 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-
+    MainLayoutComponent,
+    MainComponent,
+    FormComponent,
+    TestComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
