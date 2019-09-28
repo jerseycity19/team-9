@@ -42,6 +42,7 @@ import { MainComponent } from './main/main.component';
 import { FormComponent } from './form/form.component';
 
 import { MatButtonModule, MatStepperModule, MatFormFieldModule, MatSelectModule } from '@angular/material';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   imports: [
@@ -66,7 +67,8 @@ import { MatButtonModule, MatStepperModule, MatFormFieldModule, MatSelectModule 
     AdminLayoutComponent,
     MainLayoutComponent,
     MainComponent,
-    FormComponent
+    FormComponent,
+    TestComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

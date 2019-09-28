@@ -9,8 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
-  isLinear = false;
+  isLinear = true;
   firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
 
   ids = ['scholar', 'student', 'administrator', 'non-university'];
   ages = ['20-29', '30-39', '40-49', '50-59', '60-69', '70+'];
@@ -454,7 +455,8 @@ export class FormComponent implements OnInit {
 
   employment_stats = ['tenure or other permanent employment', 'fulltime time limited contract', 'adjunct or part-time contract', 'part-time no contract', 'not employed'];
 
-
+  studies = ['natural sciences', 'social sciences', 'arts and humanities', 'engineering', 'computer science', 'medicine', 'bussiness/finance', 'law/human rights', 'other'];
+  sensitivity_levels = ['not very sensitive', 'somewhat sensitive', 'more sensitive then most', 'extremely sensitive']
 
 
   constructor(private fb: FormBuilder) { }
@@ -466,10 +468,18 @@ export class FormComponent implements OnInit {
       gender: ['', Validators.required],
       country: ['', Validators.required],
       lang: ['', Validators.required],
-      employment: ['', Validators.required]
 
     })
+
+    this.secondFormGroup = this.fb.group({
+      employment: ['', Validators.required],
+      area_of_study: ['', Validators.required],
+      sensitivity_level: ['', Validators.required]
+    })
+
     this.firstFormGroup.valueChanges.subscribe(console.log);
+    this.secondFormGroup.valueChanges.subscribe(console.log);
+
   }
 
 }
