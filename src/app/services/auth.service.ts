@@ -39,7 +39,7 @@ export class AuthService {
   async signIn(email: string, pass: string) {
     // const provider = new auth.EmailAuthProvider();
     const credential = await this.afAuth.auth.signInWithEmailAndPassword(email, pass);
-    // return this.updateUserData(credential.user);
+    return this.updateUserData(credential.user);
   }
 
   async signOut() {

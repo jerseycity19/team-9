@@ -21,7 +21,7 @@ const routes: Routes = [
   }, {
     path: '',
     component: AdminLayoutComponent,
-    canActivateChild: [AuthGuard],
+    // canActivateChild: [AuthGuard],
     children: [{
       path: '',
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
